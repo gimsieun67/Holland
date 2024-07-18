@@ -25,6 +25,12 @@ body {
   from { opacity: 0; }
   to { opacity: 0.5; }
 }
+.name {
+  width: 220px;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 10px;
+}
 .name > img {
   width: 200px;
   height: 70px;
@@ -61,12 +67,12 @@ header {
   font-weight: 700;
 }
 .list > li > a {
-  color: #fff;
+  color: rgb(176, 116, 4);
   transition: 0.4s;
 }
 .list > li:hover > a {
   /* color: gray; */
-  text-shadow: 1px 5px 6px rgb(255, 255, 255);
+  text-shadow: 1px 5px 6px white;
   cursor: none;
 }
 
@@ -143,4 +149,10 @@ header {
 }
 .mapCK {
   font-size: 35px;
+  text-align: center;
+  padding-top: 30%;
+  line-height: 120px;
+}
+.mapCK > a:nth-child(1) {
+  padding-left: 60%;
 }
