@@ -14,15 +14,42 @@ a {
 .flex {
   display: flex;
 }
-.flag > img {
-  width: 100px;
-  height: 50px;
+body {
+  animation: fadein 0.5s;
+  transition: 1s;
+  overflow-x: hidden;
+  overflow-y: visible;
 }
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to { opacity: 0.5; }
+}
+.name > img {
+  width: 200px;
+  height: 70px;
+}
+
+.name>img:hover{
+  animation: logoAnimation .5s;
+}
+
+@keyframes logoAnimation {
+  0%{transform: rotate(0);}
+  25%{transform: rotate(5deg);}
+  75%{transform: rotate(-5deg);}
+  100%{transform: rotate(0);}
+}
+
 header {
-  background-color: rgb(255, 245, 240);
+  width: 100%;
+  position: fixed;
+  z-index: 3;
+  /* background-color: #ebf0f230; */
   justify-content: space-around;
   align-items: center;
   gap: 50%;
+  height: 100px;
 }
 
 .list {
@@ -34,17 +61,18 @@ header {
   font-weight: 700;
 }
 .list > li > a {
-  color: #ffcdb2;
+  color: #fff;
   transition: 0.4s;
 }
 .list > li:hover > a {
-  color: gray;
-  text-shadow: 1px 13px 6px rgba(0, 0, 0, 0.3);
+  /* color: gray; */
+  text-shadow: 1px 5px 6px rgb(255, 255, 255);
+  cursor: none;
 }
 
 .text_box {
   justify-content: center;
-  margin-top: 15%;
+  /* margin-top: 15%; */
   font-family: 'Times New Roman', Times, serif;
   color: #FF5B00;
   font-weight: 700;
@@ -54,14 +82,18 @@ header {
   text-align: center;
   
 }
-
 .blink {
   animation: blink 0.5s infinite;
   font-size: 3.5rem;
 }
 .text {
-  font-size: 40px;
-  background-color: antiquewhite;
+  margin-top: 20%;
+  font-size: 60px;
+  background-color: #ffffffb9;
+  border-radius: 10px;
+}
+.text:hover {
+  cursor: none;
 }
 @keyframes blink {
   to {
@@ -69,13 +101,17 @@ header {
   }
 }
 .headerBg {
+  width: 100vw;
+  height: 100vh;
   position: relative;
   width: 100vw;
   height: 100vh;
-  background-image: url("../images/네덜란드-날씨.jpg");
+  background-image: url("https://cdn.travie.com/news/photo/first/201707/img_19816_1.jpg");
   z-index: 1;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
+  cursor: url("../images/오렌지.png"), auto;
 }
 .headerBg::after{
   position: absolute;
@@ -84,5 +120,27 @@ header {
   height: 100%;
   top: 0;
   z-index: -999999;
-  background-color: rgba(0, 0, 0, 0.3);
+  /* background-color: rgba(0, 0, 0, 0.3); */
+}
+.headerBg {
+  cursor : url('../images/cuser.png')  , auto;
+}
+.container {
+  width: 1300px;
+  margin: 0 auto;
+}
+.map {
+  margin-top: 15%;
+}
+.continent {
+  background-color: rgba(73, 73, 185, 0.855);
+  width: 500px;
+  height: 600px;
+    background-image: url("../images/continent-removebg-preview.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.mapCK {
+  font-size: 35px;
 }
